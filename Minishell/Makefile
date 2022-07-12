@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 14:13:39 by yukim             #+#    #+#              #
-#    Updated: 2022/07/12 15:55:50 by yukim            ###   ########seoul.kr   #
+#    Updated: 2022/07/12 20:07:44 by hejang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ NAME = minishell
 CC = gcc -g3 -fsanitize=address
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror 
-# COMFILE_FLAGS = -lreadline -L/opt/homebrew/opt/readline/lib
-# OBJ_FLAGS = -I/opt/homebrew/opt/readline/include
-COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
-OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
+COMFILE_FLAGS = -lreadline -L/opt/homebrew/opt/readline/lib
+OBJ_FLAGS = -I/opt/homebrew/opt/readline/include
+#COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
+#OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
 
 AST_SRCS = ast/delete_astnode.c  ast/free_data_ast.c ast/init_ast.c \
 			ast/postorder_travel_ast.c ast/postorder_travel_command.c \

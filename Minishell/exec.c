@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:14 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 19:33:43 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 20:12:46 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,21 +101,21 @@ void	cmd_without_pipe(char *cmd, int idx, char **argv, char *execve_cmd)
 
 void	fork_before_run_execve(int idx, char **argv, char *execve_cmd)
 {
-	// pid_t	pid2;
+	pid_t	pid2;
 
-	// pid2 = fork();
-	// if (pid2 < 0)
-	// 	ft_error("[FORK ERROR] fork_before_run_execve failed\n");
-	// if (pid2 == 0)
-	fork_before_run_execve_child(idx, execve_cmd, argv);
-	// // else
-	// // {
-	// // 	printf("exit status %d\n", g_data.exit_status);
-	// // 	waitpid(pid2, &(g_data.exit_status), 0);
-	// // 	if (WIFEXITED(g_data.exit_status))
-	// // 		g_data.exit_status = WEXITSTATUS(g_data.exit_status);
-	// // 	else if (WIFSIGNALED(g_data.exit_status))
-	// // 		g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
-	// // 	exit(g_data.exit_status);
-	// // }
+	pid2 = fork();
+	if (pid2 < 0)
+		ft_error("[FORK ERROR] fork_before_run_execve failed\n");
+	if (pid2 == 0)
+		fork_before_run_execve_child(idx, execve_cmd, argv);
+	else
+	{
+		printf("exit status %d\n", g_data.exit_status);
+		waitpid(pid2, &(g_data.exit_status), 0);
+		if (WIFEXITED(g_data.exit_status))
+			g_data.exit_status = WEXITSTATUS(g_data.exit_status);
+		else if (WIFSIGNALED(g_data.exit_status))
+			g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
+		exit(g_data.exit_status);
+	}
 }

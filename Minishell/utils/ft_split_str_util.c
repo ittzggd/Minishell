@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 19:04:31 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 14:30:18 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/12 20:27:33 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	case_else_in_while(int *i, char *str);
 int	case_redirection(char const *str, int *i)
 {
 	if (is_redirection(&str[*i]) == ERROR)
+		return (ERROR);
+	if (*i != 0 && is_ifs(str[(*i) - 1]) == FALSE)
 		return (ERROR);
 	while (str[*i] && is_redirection(&str[*i]))
 		(*i)++;
