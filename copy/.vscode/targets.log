@@ -1,770 +1,717 @@
-make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 3.81
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
 # There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-# This program built for i386-pc-mingw32
- 
+# This program built for i386-apple-darwin11.3.0
 
-# ����ũ ����Ÿ���̽�, Tue Jul 12 19:56:49 2022
-�� ǥ��
-# ����
+# Make data base, printed on Wed Jul 13 17:27:50 2022
 
-# �ڵ�
+# Variables
+
+# automatic
 <D = $(patsubst %/,%,$(dir $<))
-# �ڵ�
+# automatic
 ?F = $(notdir $?)
-# ����ũ����
-MAKEFLAGS = Rrqp
-# ����ũ���� (from `makefile', line 23)
+# makefile (from `Makefile', line 18)
 COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
-# �ڵ�
+# automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# �ڵ�
+# automatic
 @D = $(patsubst %/,%,$(dir $@))
-# ȯ��
-HOMEDRIVE = C:
-# �ڵ�
+# automatic
 @F = $(notdir $@)
-# �ڵ�
-^D = $(patsubst %/,%,$(dir $^))
-# ����ũ����
-CURDIR := c:/Users/������/Desktop/220712afternoon_minishel/220712_yukim_hejang
-# �⺻��
-SHELL := sh.exe
-# ����ũ���� (from `makefile', line 19)
+# makefile
+CURDIR := /Users/yukim/Desktop/220713lastlast/copy
+# makefile
+SHELL = /bin/sh
+# makefile (from `Makefile', line 16)
 RM = rm -rf
-# ȯ��
-WINDIR = C:\WINDOWS
-# ȯ��
-VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{},"_languagePackSupport":true}
-# ȯ��
-VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
-# ����ũ���� (from `makefile', line 20)
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 17)
 CFLAGS = -Wall -Wextra -Werror 
-# ȯ��
-ONEDRIVE = C:\Users\������\OneDrive
-# ����ũ���� (from `makefile', line 26)
+# makefile (from `Makefile', line 21)
 AST_SRCS = ast/delete_astnode.c  ast/free_data_ast.c ast/init_ast.c ast/postorder_travel_ast.c ast/postorder_travel_command.c ast/tree_args.c ast/tree_cmd.c ast/tree_reds.c ast/tree_utils.c
-# ȯ��
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-# ����ũ���� (from `makefile', line 1)
-MAKEFILE_LIST :=  makefile
-# ȯ��
-FPS_BROWSER_USER_PROFILE_STRING = Default
-# ȯ��
-TMP = C:\Users\������\AppData\Local\Temp
-# ����ũ���� (from `makefile', line 24)
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = /Users/yukim/Library/Application Support/Code/CachedData/6ab598523be7a800d7f3eb4d92d7ab9a66069390
+# makefile (from `Makefile', line 19)
 OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
-# ȯ��
-PROGRAMW6432 = C:\Program Files
-# ����ũ���� (from `makefile', line 61)
+# environment
+VERBOSE_LOGGING = true
+# environment
+VSCODE_LOGS = /Users/yukim/Library/Application Support/Code/logs/20220713T165410
+# makefile (from `Makefile', line 57)
 OBJS = $(MAIN_OBJS) $(AST_OBJS) $(BLT_OBJS) $(UTILS_OBJS)
-# ȯ��
-PROGRAMDATA = C:\ProgramData
-# ȯ��
-VSCODE_CWD = C:\Users\������\AppData\Local\Programs\Microsoft VS Code
-# ����ũ���� (from `makefile', line 34)
-UTILS_SRCS = utils/delete_linked_list.c utils/remove_ll_element.c utils/ft_bzero.c utils/ft_calloc.c utils/ft_error.c utils/ft_lstadd_back.c utils/ft_lstnew.c utils/ft_memset.c utils/ft_itoa.c utils/ft_minishell_atoi.c utils/ft_minishell_split.c utils/ft_split_str_util.c utils/ft_strchr.c utils/ft_strdup.c utils/ft_strjoin.c utils/ft_strlcat.c utils/ft_strlcpy.c utils/ft_strlen.c utils/ft_strncmp.c utils/ft_strnstr.c utils/ft_split.c utils/syntax_utils.c utils/ft_key_len.c utils/remove_quote.c utils/replace_env_utils.c utils/get_len_replaced_str.c utils/replace_env_to_value.c utils/ft_wordcount.c utils/ft_wordcount_utils.c utils/heredoc_utils.c utils/heredoc_utils_02.c utils/exec_utils.c utils/exec_utils_02.c utils/is_utils_01.c utils/is_utils_02.c 
-# ȯ��
-PATH = C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\������\AppData\Local\Microsoft\WindowsApps;C:\Users\������\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\������\AppData\Local\GitHubDesktop\bin;C:\Program Files\mingw-w64\mingw64\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\������\AppData\Roaming\npm
-# ȯ��
-COMMONPROGRAMW6432 = C:\Program Files\Common Files
-# ȯ��
-PROCESSOR_ARCHITECTURE = x86
-# ȯ��
-USERPROFILE = C:\Users\������
-# ȯ��
-ALLUSERSPROFILE = C:\ProgramData
-# ȯ��
-NUMBER_OF_PROCESSORS = 16
-# ȯ��
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cmhh003544/T/vscode-ipc-c1bcc601-b2db-4a1e-b25d-4ec375466dc7.sock
+# makefile (from `Makefile', line 29)
+UTILS_SRCS = utils/delete_linked_list.c utils/remove_ll_element.c utils/ft_bzero.c utils/ft_calloc.c utils/ft_error.c utils/ft_lstadd_back.c utils/ft_lstnew.c utils/ft_memset.c utils/ft_itoa.c utils/ft_minishell_atoi.c utils/ft_minishell_split.c utils/ft_split_str_util.c utils/ft_strchr.c utils/ft_strdup.c utils/ft_strjoin.c utils/ft_strlcat.c utils/ft_strlcpy.c utils/ft_strlen.c utils/ft_strncmp.c utils/ft_strnstr.c utils/ft_split.c utils/syntax_utils.c utils/ft_key_len.c utils/remove_quote.c utils/replace_env_utils.c utils/get_len_replaced_str.c utils/replace_env_to_value.c utils/ft_wordcount.c utils/ft_wordcount_utils.c utils/heredoc_utils.c utils/heredoc_utils_02.c utils/exec_utils.c utils/exec_utils_02.c utils/is_utils_01.c utils/is_utils_02.c utils/envvlist_to_char.c
+# environment
+PATH = /Users/yukim/.brew/bin:/Users/yukim/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+LaunchInstanceID = 9440C4F0-BC1E-4D1F-8779-F03188DDA472
+# environment
+VSCODE_LOG_STACK = false
+# environment
 ELECTRON_RUN_AS_NODE = 1
-# �⺻��
-.FEATURES := target-specific order-only second-expansion else-if archives
-# �ڵ�
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.T8wU3iHkA8/Listeners
+# automatic
 %F = $(notdir $%)
-# ȯ��
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5408_SLLLBBOLGYNRMZIP
-# ȯ��
-COMPUTERNAME = DESKTOP-E4NGFC2
-# ȯ��
-PROGRAMFILES = C:\Program Files (x86)
-# ȯ��
-DRIVERDATA = C:\Windows\System32\Drivers\DriverData
-# ȯ��
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# ȯ��
-USERNAME = ������
-# ȯ��
-PUBLIC = C:\Users\Public
-# ȯ��
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# ȯ��
-VSCODE_CODE_CACHE_PATH = C:\Users\������\AppData\Roaming\Code\CachedData\92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
-# ����ũ���� (from `makefile', line 30)
+# environment
+PWD = /Users/yukim/Desktop/220713lastlast/copy
+# environment
+HOME = /Users/yukim
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# makefile (from `Makefile', line 25)
 BLT_SRCS = builtins/blt_cd.c builtins/blt_echo.c builtins/blt_env.c builtins/blt_exit.c builtins/blt_export.c builtins/blt_nanoshell.c builtins/blt_pwd.c builtins/blt_unset.c builtins/blt_utils.c
-# ȯ��
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# ȯ��
-COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
-# ȯ��
-LOGONSERVER = \\DESKTOP-E4NGFC2
-# ȯ��
+# environment
+LOGNAME = yukim
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# ȯ��
-USERDOMAIN = DESKTOP-E4NGFC2
-# �⺻��
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
 MAKE = $(MAKE_COMMAND)
-# �⺻��
+# default
 MAKECMDGOALS := all
-# ����ũ���� (from `makefile', line 18)
-CC = gcc -g3 -fsanitize=address
-# �⺻��
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 15)
+CC = gcc
+# default
 MAKE_VERSION := 3.81
-# ����ũ����
+# environment
+AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+USER = yukim
+# makefile
 .DEFAULT_GOAL := all
-# ����ũ���� (from `makefile', line 56)
+# makefile (from `Makefile', line 52)
 MAIN_OBJS = $(MAIN_SRCS:.c=.o)
-# ����ũ���� (from `makefile', line 13)
+# makefile (from `Makefile', line 13)
 NAME = minishell
-# ȯ��
-PROGRAMFILES(X86) = C:\Program Files (x86)
-# �ڵ�
+# environment
+PIPE_LOGGING = true
+# automatic
 %D = $(patsubst %/,%,$(dir $%))
-# ȯ��
-LOCALAPPDATA = C:\Users\������\AppData\Local
-# ȯ��
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-# �⺻��
-MAKE_COMMAND := make.exe
-# ȯ��
-PROCESSOR_ARCHITEW6432 = AMD64
-# �⺻��
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
 .VARIABLES := 
-# �ڵ�
+# environment
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cmhh003544/T/
+# automatic
 *F = $(notdir $*)
-# ȯ��
-PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
-# ȯ��
-OS = Windows_NT
-# ȯ��
-VSCODE_IPC_HOOK = \\.\pipe\7eec81eb4536cd38cf47505cc0f47cce-1.69.0-main-sock
-# ȯ��
-HOMEPATH = \Users\������
-# ȯ��
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
-# ȯ��
-PROMPT = $P$G
-# ȯ��
+# environment
+VSCODE_IPC_HOOK = /Users/yukim/Library/Application Support/Code/1.39.2-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
 MFLAGS = -Rrqp
-# �ڵ�
+# automatic
 *D = $(patsubst %/,%,$(dir $*))
-# ȯ��
-SYSTEMROOT = C:\WINDOWS
-# �ڵ�
+# environment
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+# automatic
 +D = $(patsubst %/,%,$(dir $+))
-# �ڵ�
+# automatic
 +F = $(notdir $+)
-# ȯ��
-APPDATA = C:\Users\������\AppData\Roaming
-# ����ũ���� (from `makefile', line 57)
+# makefile (from `Makefile', line 53)
 AST_OBJS = $(AST_SRCS:.c=.o)
-# ȯ��
-TEMP = C:\Users\������\AppData\Local\Temp
-# ȯ��
-COMSPEC = C:\WINDOWS\system32\cmd.exe
-# �⺻��
+# environment
+__CF_USER_TEXT_ENCODING = 0x19484:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
 MAKEFILES := 
-# �ڵ�
+# automatic
 <F = $(notdir $<)
-# ȯ��
+# environment
 LC_ALL = C
-# �ڵ�
+# environment
+SECURITYSESSIONID = 186a6
+# automatic
 ^F = $(notdir $^)
-# ����ũ���� (from `makefile', line 59)
+# makefile (from `Makefile', line 55)
 UTILS_OBJS = $(UTILS_SRCS:.c=.o)
-# �⺻��
+# default
 SUFFIXES := 
-# ȯ��
-SYSTEMDRIVE = C:
-# ȯ��
-SESSIONNAME = Console
-# ȯ��
-PROCESSOR_REVISION = 6001
-# ȯ��
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
 MAKELEVEL := 0
-# ����ũ���� (from `makefile', line 50)
+# makefile (from `Makefile', line 46)
 MAIN_SRCS = main.c init.c signal.c reset.c redirections.c heredoc.c token.c lexer.c syntax.c exec.c data.c env.c path.c quote_env.c 
-# ȯ��
+# environment
 LANG = C
-# ȯ��
-PROCESSOR_LEVEL = 23
-# ȯ��
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
-# ����ũ���� (from `makefile', line 58)
+# makefile (from `Makefile', line 54)
 BLT_OBJS = $(BLT_SRCS:.c=.o)
-# ȯ��
-VSCODE_PID = 5408
-# ȯ��
-USERDOMAIN_ROAMINGPROFILE = DESKTOP-E4NGFC2
+# environment
+VSCODE_PID = 7635
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=13/136=10%
+# Load=76/1024=7%, Rehash=0, Collisions=8/117=7%
 
 # Pattern-specific Variable Values
 
-# ������ ���� ���� ������ �����ϴ�.
+# No pattern-specific variable values.
 
-# ���丮
+# Directories
 
-# C:\Users\������\AppData\Local\Programs\Microsoft VS Code\bin (Ű C:/Users/������/AppData/Local/Programs/Microsoft VS Code/bin, ����ð� 1657252445): 4 ����, 0�� �Ұ���.
-# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (Ű C:/WINDOWS/System32/WindowsPowerShell/v1.0/, ����ð� 1642388924): 32 ����, 0�� �Ұ���.
-# C:\Users\������\AppData\Roaming\npm (Ű C:/Users/������/AppData/Roaming/npm, ����ð� 1651056164): 2 ����, 0�� �Ұ���.
-# C:\WINDOWS\System32\Wbem (Ű C:/WINDOWS/System32/Wbem, ����ð� 1652880834): 155 ����, 0�� �Ұ���.
-# . (Ű c:/Users/������/Desktop/220712afternoon_minishel/220712_yukim_hejang, ����ð� 1657623027): 23 ����, 0�� �Ұ���.
-# C:\Program Files\nodejs\ (Ű C:/Program Files/nodejs/, ����ð� 1651056171): 13 ����, 0�� �Ұ���.
-# C:\Users\������\AppData\Local\GitHubDesktop\bin (Ű C:/Users/������/AppData/Local/GitHubDesktop/bin, ����ð� 1630886141): 4 ����, 0�� �Ұ���.
-# C:\Users\������\AppData\Local\Microsoft\WindowsApps (Ű C:/Users/������/AppData/Local/Microsoft/WindowsApps, ����ð� 1657511789): 24 ����, 0�� �Ұ���.
-# C:\WINDOWS\System32\OpenSSH\: stat�� �� �� �������ϴ�.
-# C:\WINDOWS (Ű C:/WINDOWS, ����ð� 1646572182): 116 ����, 0�� �Ұ���.
-# C:\Program Files\mingw-w64\mingw64\bin (Ű C:/Program Files/mingw-w64/mingw64/bin, ����ð� 1650290333): 58 ����, 0�� �Ұ���.
-# C:\Program Files\Git\cmd (Ű C:/Program Files/Git/cmd, ����ð� 1630886014): 8 ����, 0�� �Ұ���.
-# C:\WINDOWS\system32 (Ű C:/WINDOWS/system32, ����ð� 1657172223): 3022 ����, 0�� �Ұ���.
-# C:\Program Files (x86)\GnuWin32\bin (Ű C:/Program Files (x86)/GnuWin32/bin, ����ð� 1650808618): 5 ����, 0�� �Ұ���.
+# . (device 16777225, inode 5969251): 23 files, no impossibilities.
 
-# 3466 ����, 0�� impossibilities in 14 directories.
+# 23 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  ������ ���ɾ� (`makefile'����, 69��° ��):
+#  commands to execute (from `Makefile', line 65):
 	$(CC) $(CFLAGS) $(OBJ_FLAGS) -c $< -o $@
 	
 
-# 1���� ������ ��Ģ, 0 (0.0%) �͹̳�.
+# 1 implicit rules, 0 (0.0%) terminal.
 
-# ����
+# Files
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_wordcount_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/tree_cmd.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/is_utils_02.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_pwd.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 data.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_unset.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  � 
-��� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/heredoc_utils_02.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 all: minishell
-#  ���� Ÿ�� (.PHONY�� ��������).
-#  ������ Ÿ��.
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵǾ����ϴ�.
-#  ���ŵ� �ʿ䰡 ���� (-q ������).
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_calloc.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_minishell_split.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 main.c:
-#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
-#  ������ ���� 2022-07-12 19:50:27
-#  ������ ���ŵǾ����ϴ�.
-#  ���������� ���ŵ�.
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 17:26:16
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_nanoshell.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/replace_env_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
-.DEFAULT:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
-
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/tree_args.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/tree_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/replace_env_to_value.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/remove_quote.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_strlcpy.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 utils/ft_strncmp.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
-utils/ft_strdup.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
-
-# Ÿ���� �ƴ�:
-makefile:
-#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
-#  ������ ���� 2022-07-12 19:50:27
-#  ������ ���ŵǾ����ϴ�.
-#  ���������� ���ŵ�.
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 17:26:16
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Ÿ���� �ƴ�:
+# Not a target:
+utils/ft_strdup.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 utils/ft_strchr.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_wordcount.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 quote_env.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_cd.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_strnstr.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 redirections.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-minishell: main.o init.o signal.o reset.o redirections.o heredoc.o token.o lexer.o syntax.o exec.o data.o env.o path.o quote_env.o ast/delete_astnode.o ast/free_data_ast.o ast/init_ast.o ast/postorder_travel_ast.o ast/postorder_travel_command.o ast/tree_args.o ast/tree_cmd.o ast/tree_reds.o ast/tree_utils.o builtins/blt_cd.o builtins/blt_echo.o builtins/blt_env.o builtins/blt_exit.o builtins/blt_export.o builtins/blt_nanoshell.o builtins/blt_pwd.o builtins/blt_unset.o builtins/blt_utils.o utils/delete_linked_list.o utils/remove_ll_element.o utils/ft_bzero.o utils/ft_calloc.o utils/ft_error.o utils/ft_lstadd_back.o utils/ft_lstnew.o utils/ft_memset.o utils/ft_itoa.o utils/ft_minishell_atoi.o utils/ft_minishell_split.o utils/ft_split_str_util.o utils/ft_strchr.o utils/ft_strdup.o utils/ft_strjoin.o utils/ft_strlcat.o utils/ft_strlcpy.o utils/ft_strlen.o utils/ft_strncmp.o utils/ft_strnstr.o utils/ft_split.o utils/syntax_utils.o utils/ft_key_len.o utils/remove_quote.o utils/replace_env_utils.o utils/get_len_replaced_str.o utils/replace_env_to_value.o utils/ft_wordcount.o utils/ft_wordcount_utils.o utils/heredoc_utils.o utils/heredoc_utils_02.o utils/exec_utils.o utils/exec_utils_02.o utils/is_utils_01.o utils/is_utils_02.o
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵǾ����ϴ�.
-#  ���ŵ� �ʿ䰡 ���� (-q ������).
+nanoshell: main.o init.o signal.o reset.o redirections.o heredoc.o token.o lexer.o syntax.o exec.o data.o env.o path.o quote_env.o ast/delete_astnode.o ast/free_data_ast.o ast/init_ast.o ast/postorder_travel_ast.o ast/postorder_travel_command.o ast/tree_args.o ast/tree_cmd.o ast/tree_reds.o ast/tree_utils.o builtins/blt_cd.o builtins/blt_echo.o builtins/blt_env.o builtins/blt_exit.o builtins/blt_export.o builtins/blt_nanoshell.o builtins/blt_pwd.o builtins/blt_unset.o builtins/blt_utils.o utils/delete_linked_list.o utils/remove_ll_element.o utils/ft_bzero.o utils/ft_calloc.o utils/ft_error.o utils/ft_lstadd_back.o utils/ft_lstnew.o utils/ft_memset.o utils/ft_itoa.o utils/ft_minishell_atoi.o utils/ft_minishell_split.o utils/ft_split_str_util.o utils/ft_strchr.o utils/ft_strdup.o utils/ft_strjoin.o utils/ft_strlcat.o utils/ft_strlcpy.o utils/ft_strlen.o utils/ft_strncmp.o utils/ft_strnstr.o utils/ft_split.o utils/syntax_utils.o utils/ft_key_len.o utils/remove_quote.o utils/replace_env_utils.o utils/get_len_replaced_str.o utils/replace_env_to_value.o utils/ft_wordcount.o utils/ft_wordcount_utils.o utils/heredoc_utils.o utils/heredoc_utils_02.o utils/exec_utils.o utils/exec_utils_02.o utils/is_utils_01.o utils/is_utils_02.o utils/envvlist_to_char.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/6=0%
-#  ������ ���ɾ� (`makefile'����, 66��° ��):
+#  commands to execute (from `Makefile', line 62):
 	$(CC) $(CFLAGS) $(COMFILE_FLAGS) $(OBJS) -o $(NAME) 
 	
 
-# Ÿ���� �ƴ�:
+# Not a target:
 token.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
-#  ���� Ÿ�� (.PHONY�� ��������).
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
-#  ������ ���ɾ� (`makefile'����, 75��° ��):
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 71):
 	$(RM) $(NAME)
 	
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/syntax_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/get_len_replaced_str.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_key_len.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
-.SUFFIXES:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
-
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/init_ast.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_exit.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_error.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_lstadd_back.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 utils/ft_split_str_util.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_echo.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/remove_ll_element.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/exec_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 reset.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_export.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
-#  ���� Ÿ�� (.PHONY�� ��������).
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_itoa.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
+utils/envvlist_to_char.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 utils/ft_strlen.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
-#  ���� Ÿ�� (.PHONY�� ��������).
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
-#  ������ ���ɾ� (`makefile'����, 72��° ��):
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 68):
 	$(RM) $(OBJS) 
 	
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/postorder_travel_command.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_lstnew.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/delete_astnode.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_memset.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 init.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/delete_linked_list.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/postorder_travel_ast.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 heredoc.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 syntax.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_split.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 main.o: main.c
-#  ������ ��Ģ Ž���� �Ϸ�Ǿ����ϴ�.
-#  ������/���� ���� ����: `main'
-#  ������ �������� �ʽ��ϴ�.
-#  ������ ���ŵǾ����ϴ�.
-#  ���ŵ� �ʿ䰡 ���� (-q ������).
-# �ڵ�
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
 # @ := main.o
-# �ڵ�
+# automatic
 # % := 
-# �ڵ�
+# automatic
 # * := main
-# �ڵ�
+# automatic
 # + := main.c
-# �ڵ�
+# automatic
 # | := 
-# �ڵ�
+# automatic
 # < := main.c
-# �ڵ�
+# automatic
 # ^ := main.c
-# �ڵ�
+# automatic
 # ? := main.c
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=4/16=25%
-#  ������ ���ɾ� (`makefile'����, 69��° ��):
+#  commands to execute (from `Makefile', line 65):
 	$(CC) $(CFLAGS) $(OBJ_FLAGS) -c $< -o $@
 	
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/heredoc_utils.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_minishell_atoi.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 path.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_strlcat.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/tree_reds.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 lexer.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 ast/free_data_ast.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_bzero.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 exec.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/is_utils_01.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 builtins/blt_env.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 signal.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/ft_strjoin.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 utils/exec_utils_02.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Ÿ���� �ƴ�:
+# Not a target:
 env.o:
-#  ������ ��Ģ Ž���� �Ϸ���� �ʾҽ��ϴ�.
-#  ���� �ð��� ���� �˻���� �ʾ���.
-#  ������ ���ŵ��� �ʾҽ��ϴ�.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=10/167=6%
-# VPATH Ž�� ���
+# Load=78/1024=8%, Rehash=0, Collisions=10/170=6%
+# VPATH Search Paths
 
-# `vpath' Ž�� ��ΰ� ����.
+# No `vpath' search paths.
 
-# �Ϲ����� (`VPATH' ����) Ž�� ��ΰ� ����.
+# No general (`VPATH' variable) search path.
 
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# ����ũ ����Ÿ ���̽� ��ħ, Tue Jul 12 19:56:49 2022
-����
+# Finished Make data base on Wed Jul 13 17:27:50 2022
+
  

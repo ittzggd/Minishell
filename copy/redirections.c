@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:55:52 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 17:24:21 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:33:12 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	out_red(char *filename)
 	close(fd);
 }
 
-void	in_red(char *filename)
+int	in_red(char *filename)
 {
 	int	fd;
 
@@ -34,10 +34,12 @@ void	in_red(char *filename)
 	{
 		ft_error_message("nanoshell: ", 1);
 		ft_error_message(filename, 1);
-		ft_error_message(" No such file or directory", 1);
+		ft_error_message(": No such file or directory\n", 1);
+		return (ERROR);
 	}
 	dup2(fd, STDIN_FILENO);
 	close(fd);
+	return (TRUE);
 }
 
 void	append_red(char *filename)

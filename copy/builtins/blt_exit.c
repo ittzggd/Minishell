@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   blt_exit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:26:05 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 21:10:19 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:32:50 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	exit_status_numeric_error(t_astnode *args_node)
 	char	*str;
 
 	str = g_data.lexer.pptokens[args_node->pvalue_index[1]];
-	ft_error_message("exit: minishell: ", 255);
+	ft_error_message("exit: nanoshell: ", 255);
 	ft_error_message(str, 255);
 	ft_error_message(": numeric argument required", 255);
 	exit(255);
@@ -51,6 +51,6 @@ void	exit_status_numeric_error(t_astnode *args_node)
 
 static int	exit_status_argc_error(void)
 {
-	ft_error_message("minishell: exit :too many arguments\n", 1);
+	ft_error_message("nanoshell: exit :too many arguments\n", 1);
 	return (1);
 }

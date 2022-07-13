@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   syntax.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:07:44 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 14:04:30 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:33:12 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ int	syntax_analysis(int *tokens_cnt)
 
 void	syntax_error(int *ret_status)
 {
-	ft_error_message("minishell: syntax error near unexpected token\n", 258);
+	ft_error_message("nanoshell: syntax error near unexpected token\n", 258);
 	*ret_status = 258;
 }

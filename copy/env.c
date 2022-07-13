@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:59:43 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 17:18:09 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:31:03 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void	insert_envv(char *key, char *value, int init_flag)
 	if (is_exist)
 	{
 		if (!value)
+		{
+			free(key);
 			return ;
+		}
 		tmp = is_exist->value;
 		is_exist->value = ft_strdup(value);
 		free_arg(key, value);
