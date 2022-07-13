@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:59:43 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 15:45:46 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:18:09 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	insert_envv(char *key, char *value, int init_flag)
 	is_exist = get_el_node(g_data.envv_list, key);
 	if (is_exist)
 	{
+		if (!value)
+			return ;
 		tmp = is_exist->value;
 		is_exist->value = ft_strdup(value);
 		free_arg(key, value);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirections.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:55:52 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:27 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 17:24:21 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	in_red(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_error_message("minishell: ", 1);
+		ft_error_message("nanoshell: ", 1);
 		ft_error_message(filename, 1);
-		ft_error_message(" No such file or directory\n", 1);
+		ft_error_message(" No such file or directory", 1);
 	}
 	dup2(fd, STDIN_FILENO);
 	close(fd);
