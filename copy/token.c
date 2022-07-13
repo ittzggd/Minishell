@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 23:22:36 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 14:16:35 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:41:55 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ int	analyze_input(char *input)
 
 	replaced_str = replace_env_to_value(input);
 	if (tokenize_input(replaced_str, &tokens_cnt) == ERROR)
+	{
+		free(replaced_str);
 		return (ERROR);
+	}
 	lexical_analysis(&tokens_cnt);
 	if (syntax_analysis(&tokens_cnt) != 0)
+	{
+		free(replaced_str);
 		return (ERROR);
+	}
 	replace_quote_env();
 	free(replaced_str);
 	return (TRUE);
