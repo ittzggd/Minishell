@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:55:52 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/08 15:21:46 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:28:27 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ void	heredoc(char *delimiter)
 	int	read_fd;
 
 	i = 0;
-	while (i < g_data.heredoc_cnt)
+	while (i < g_data.hd.heredoc_cnt)
 	{
-		if (ft_strncmp(g_data.heredoc_delimiter[i], delimiter, -1))
+		if (ft_strncmp(g_data.hd.heredoc_delimiter[i], delimiter, -1))
 			break ;
 		i++;
 	}
-	read_fd = g_data.heredoc_fd[i].fd[0];
+	read_fd = g_data.hd.heredoc_fd[i].fd[0];
 	dup2(read_fd, STDIN_FILENO);
 	close(read_fd);
 }

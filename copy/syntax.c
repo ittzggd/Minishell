@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:07:44 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:54 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:29:44 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	syntax_analysis(void)
 
 	curr = 0;
 	ret_status = 0;
-	while (curr < g_data.tokens_cnt)
+	while (curr < g_data.cnt.tokens_cnt)
 	{
 		if (g_data.lexer.ptype[curr] == T_COMMAND)
 			syntax_check_command(&curr);

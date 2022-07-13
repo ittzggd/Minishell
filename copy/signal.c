@@ -33,7 +33,7 @@ void	ft_sig_handler_in_heredoc_sigquit(int sig_num)
 void	ctrl_c(int sig_num)
 {
 	(void)sig_num;
-	if (g_data.heredoc_flag == TRUE)
+	if (g_data.hd.heredoc_flag == TRUE)
 		return ;
 	if (g_data.p_flag == TRUE)
 	{
@@ -55,14 +55,14 @@ void	ctrl_bs(int sig_num)
 	(void)sig_num;
 	if (g_data.p_flag == TRUE)
 	{
-		if (g_data.heredoc_flag == TRUE)
+		if (g_data.hd.heredoc_flag == TRUE)
 			return ;
 		ft_error_message("^\\Quit: 3\n", 131);
 		exit(g_data.exit_status);
 	}
 	else if (g_data.p_flag == FALSE)
 	{
-		if (g_data.heredoc_flag == TRUE)
+		if (g_data.hd.heredoc_flag == TRUE)
 			return ;
 		rl_on_new_line();
 		rl_redisplay();

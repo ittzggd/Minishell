@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:59:43 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:52 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:28:35 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	insert_envv(char *key, char *value, int init_flag)
 		new = ft_lstnew(element);
 		ft_lstadd_back(new);
 		free_arg(key, value);
-		g_data.envv_cnt++;
+		g_data.cnt.envv_cnt++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:13:42 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/04 20:47:52 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:28:35 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**envvlist_to_envp(void)
 	char		**envp;
 	t_envv_node	*curr;
 
-	cnt = g_data.envv_cnt;
+	cnt = g_data.cnt.envv_cnt;
 	envp = (char **)ft_calloc((cnt + 1), sizeof(char *));
 	if (!envp)
 		ft_error("envvlist_to_envp : alloction failed\n");

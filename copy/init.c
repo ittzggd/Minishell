@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 20:08:48 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/04 18:58:11 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:32:20 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ static void	init_data_stdfd(void)
 
 static void	init_data_termios(void)
 {
-	tcgetattr(g_data.std_fd[0], &g_data.origin_term);
-	g_data.changed_term = g_data.origin_term;
-	g_data.changed_term.c_lflag &= ~(ECHOCTL);
-	tcsetattr(g_data.std_fd[0], TCSANOW, &g_data.changed_term);
+	tcgetattr(g_data.std_fd[0], &g_data.term.origin_term);
+	g_data.term.changed_term = g_data.term.origin_term;
+	g_data.term.changed_term.c_lflag &= ~(ECHOCTL);
+	tcsetattr(g_data.std_fd[0], TCSANOW, &g_data.term.changed_term);
 }
 
 static void	init_data_envvlist(char **envp)

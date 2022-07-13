@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 06:39:26 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:51 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:27:29 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	exec_heredoc(int i, int *idx)
 		if (delimiter_quote_flag)
 			rm_argument_quote(i + 1);
 		delimiter = g_data.lexer.pptokens[i + 1];
-		rl_heredoc(delimiter, &g_data.heredoc_fd[*idx], delimiter_quote_flag);
+		rl_heredoc(delimiter, &g_data.hd.heredoc_fd[*idx], delimiter_quote_flag);
 		(*idx)++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:03:00 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:18:32 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:32:18 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,40 @@ typedef struct s_heredoc_fd
 	int	fd[2];
 }			t_heredoc_fd;
 
+typedef struct s_heredoc
+{
+	t_heredoc_fd	*heredoc_fd;
+	char			**heredoc_delimiter;
+	int				heredoc_cnt;
+	int				heredoc_flag;
+}			t_heredoc;
+
+typedef struct s_cnt
+{
+	int		tokens_cnt;
+	int		redirection_cnt;
+	int		pipe_cnt;
+	int		envv_cnt;
+}		t_cnt;
+
+typedef struct s_termios
+{
+	struct termios	origin_term;
+	struct termios	changed_term;
+}		t_termios;
+
 typedef struct s_data
 {
-	int						std_fd[2];
-	t_heredoc_fd			*heredoc_fd;
-	char					**heredoc_delimiter;
-	int						heredoc_cnt;
-	int						heredoc_flag;
-	struct termios			origin_term;
-	struct termios			changed_term;
-	struct s_envv_node		*envv_list;
-	int						envv_cnt;
-	int						exit_status;
-	int						tokens_cnt;
-	int						redirection_cnt;
-	int						pipe_cnt;
-	struct s_lexer			lexer;
-	struct s_ast			ast;
-	int						p_flag;
-	char					*current_path;
+	int					std_fd[2];
+	struct s_heredoc	hd;
+	struct s_cnt		cnt;
+	struct s_termios	term;
+	struct s_envv_node	*envv_list;
+	int					exit_status;
+	struct s_lexer		lexer;
+	struct s_ast		ast;
+	int					p_flag;
+	char				*current_path;
 }			t_data;
 
 typedef struct s_envv_node

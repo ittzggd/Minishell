@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:43:08 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:51 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:28:27 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	input_str_is_not_null(char *input_str)
 		return (CONTINUE);
 	}
 	init_ast();
-	if (g_data.heredoc_cnt > 0)
+	if (g_data.hd.heredoc_cnt > 0)
 	{
 		preprocess_heredoc();
 		if (g_data.exit_status == 1)
