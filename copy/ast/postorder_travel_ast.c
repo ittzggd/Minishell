@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 15:51:54 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 21:56:22 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/12 21:58:45 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ void	postorder_travel_ast(t_astnode *ast_node)
 	i = 0;
 	while (i < g_data.pipe_cnt + 1)
 	{
-		waitpid(pid[i], &g_data.exit_status, 0);
-		i++;
+	 	waitpid(pid[i], &g_data.exit_status, 0);
+	 	write(g_data.std_fd[1], "child parent pid\n", 17);
+	 	i++;
 	}
 	if (WIFEXITED(g_data.exit_status))
 		g_data.exit_status = WEXITSTATUS(g_data.exit_status);
 	else if (WIFSIGNALED(g_data.exit_status))
 		g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
 	free(pid);
+	exit(g_data.exit_status);
 }
 
 static void	while_pipe_or_command(t_astnode *ast_node, pid_t *pid)
@@ -55,6 +57,7 @@ static void	while_pipe_or_command(t_astnode *ast_node, pid_t *pid)
 				ft_error("[Pipe ERROR] ast failed\n");
 		}
 		pid[i] = fork();
+		g_data.p_flag = TRUE;
 		if (pid[i] < 0)
 			ft_error("[Fork ERROR] ast failed\n");
 		if (pid[i] == 0)
@@ -86,8 +89,6 @@ static void	c_in_while(int i, int *prev_fd, int *pipe_line, t_astnode *astnode)
 
 static void	parent_in_while_pipe_or_cmd(int i, int *prev_fd, int *pipe_line)
 {
-	signal(SIGINT, SIG_IGN);
-	signal(SIGQUIT, SIG_IGN);
 	if (*prev_fd != NOT_USED)
 		close(*prev_fd);
 	if (i == g_data.pipe_cnt)

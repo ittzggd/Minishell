@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:14 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 12:14:26 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:12:41 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,25 @@
 void	exec_ast(void)
 {
 	if (g_data.pipe_cnt > 0)
-		postorder_travel_ast(g_data.ast.prootnode);
+	{
+		pid_t	pid2;
+
+		pid2 = fork();
+		if (pid2 < 0)
+			ft_error("[FORK ERROR] fork_before_run_execve failed\n");
+		if (pid2 == 0)
+			postorder_travel_ast(g_data.ast.prootnode);
+		else
+		{
+			signal(SIGINT, SIG_IGN);
+			signal(SIGQUIT, SIG_IGN);
+			waitpid(pid2, &(g_data.exit_status), 0);
+			if (WIFEXITED(g_data.exit_status))
+				g_data.exit_status = WEXITSTATUS(g_data.exit_status);
+			else if (WIFSIGNALED(g_data.exit_status))
+				g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
+		}
+	}
 	else
 		postorder_travel_command(g_data.ast.prootnode);
 }
@@ -43,6 +61,8 @@ void	exec_cmd(t_astnode *argsnode)
 		ft_unset(argsnode);
 	else
 		execve_cmd(argsnode);
+	if(g_data.pipe_cnt > 0 && g_data.p_flag == TRUE)
+	 	exit(g_data.exit_status);
 }
 
 void	execve_cmd(t_astnode *argsnode)
@@ -79,6 +99,7 @@ void	cmd_without_pipe(char *cmd, int idx, char **argv, char *execve_cmd)
 	g_data.p_flag = TRUE;
 	if (pid == 0)
 	{
+		reset_signal();
 		if (ft_strnstr(cmd, "minishell", ft_strlen(cmd)))
 			ft_nanoshell(cmd);
 		else
@@ -101,21 +122,26 @@ void	cmd_without_pipe(char *cmd, int idx, char **argv, char *execve_cmd)
 
 void	fork_before_run_execve(int idx, char **argv, char *execve_cmd)
 {
-	pid_t	pid2;
-
-	pid2 = fork();
-	if (pid2 < 0)
-		ft_error("[FORK ERROR] fork_before_run_execve failed\n");
-	if (pid2 == 0)
-		fork_before_run_execve_child(idx, execve_cmd, argv);
-	else
+	if (g_data.pipe_cnt == 0)
 	{
-		printf("exit status %d\n", g_data.exit_status);
-		waitpid(pid2, &(g_data.exit_status), 0);
-		if (WIFEXITED(g_data.exit_status))
-			g_data.exit_status = WEXITSTATUS(g_data.exit_status);
-		else if (WIFSIGNALED(g_data.exit_status))
-			g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
-		exit(g_data.exit_status);
+		pid_t	pid2;
+
+		pid2 = fork();
+		if (pid2 < 0)
+			ft_error("[FORK ERROR] fork_before_run_execve failed\n");
+		if (pid2 == 0)
+			fork_before_run_execve_child(idx, execve_cmd, argv);
+		else
+		{
+			// printf("exit status %d\n", g_data.exit_status);
+			waitpid(pid2, &(g_data.exit_status), 0);
+			if (WIFEXITED(g_data.exit_status))
+				g_data.exit_status = WEXITSTATUS(g_data.exit_status);
+			else if (WIFSIGNALED(g_data.exit_status))
+				g_data.exit_status = WTERMSIG(g_data.exit_status) + 128;
+			exit(g_data.exit_status);
+		}
 	}
+	else
+		fork_before_run_execve_child(idx, execve_cmd, argv);
 }
