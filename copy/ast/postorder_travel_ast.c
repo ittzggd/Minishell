@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 15:51:54 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 15:34:04 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:45:59 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	postorder_travel_ast(t_astnode *ast_node)
 	while (i < g_data.pipe_cnt + 1)
 	{
 		waitpid(pid[i], &g_data.exit_status, 0);
-		write(g_data.std_fd[1], "child parent pid\n", 17);
 		i++;
 	}
 	if (WIFEXITED(g_data.exit_status))
