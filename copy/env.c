@@ -19,7 +19,6 @@ void	insert_envv(char *key, char *value, int init_flag)
 	t_envv_node	element;
 	t_envv_node	*is_exist;
 	t_envv_node	*new;
-	char		*tmp;
 
 	is_exist = get_el_node(g_data.envv_list, key);
 	if (is_exist)
