@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:59:43 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:35 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:25:06 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/minishell.h"
 
-static void	free_arg(char *key,char *value);
+static void	free_arg(char *key, char *value);
 
 void	insert_envv(char *key, char *value, int init_flag)
 {
@@ -24,14 +24,8 @@ void	insert_envv(char *key, char *value, int init_flag)
 	is_exist = get_el_node(g_data.envv_list, key);
 	if (is_exist)
 	{
-		if(!value)
-		{
-			free(key);
-			return;
-		}
 		tmp = is_exist->value;
 		is_exist->value = ft_strdup(value);
-		is_exist->init_flag = TRUE;
 		free_arg(key, value);
 		free(tmp);
 	}
@@ -43,7 +37,6 @@ void	insert_envv(char *key, char *value, int init_flag)
 		new = ft_lstnew(element);
 		ft_lstadd_back(new);
 		free_arg(key, value);
-		g_data.cnt.envv_cnt++;
 	}
 }
 
@@ -100,7 +93,7 @@ int	init_envp(char *input, char **key, char **value)
 	return (init_flag);
 }
 
-static void	free_arg(char *key,char *value)
+static void	free_arg(char *key, char *value)
 {
 	free(key);
 	free(value);

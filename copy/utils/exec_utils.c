@@ -6,7 +6,7 @@
 /*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 03:53:00 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/12 19:34:15 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 13:58:20 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**allocate_empty_str_in_filepath(char *execve_cmd)
 {
 	char	**filepath;
 
-	if(!execve_cmd)
+	if (!execve_cmd)
 	{
 		filepath = ft_calloc(2, sizeof(char *));
 		if (!filepath)
@@ -51,7 +51,7 @@ char	**allocate_empty_str_in_filepath(char *execve_cmd)
 		filepath[1] = NULL;
 		return (filepath);
 	}
-	else 
+	else
 	{
 		filepath = ft_calloc(2, sizeof(char *));
 		if (!filepath)

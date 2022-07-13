@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:14 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:15 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:08:31 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	exec_ast(void)
 {
+	pid_t	pid2;
+
+	pid2 = -1;
 	if (g_data.cnt.pipe_cnt > 0)
 	{
-		pid_t	pid2;
-
 		pid2 = fork();
 		if (pid2 < 0)
 			ft_error("[FORK ERROR] fork_before_run_execve failed\n");
@@ -61,8 +62,8 @@ void	exec_cmd(t_astnode *argsnode)
 		ft_unset(argsnode);
 	else
 		execve_cmd(argsnode);
-	if(g_data.cnt.pipe_cnt > 0 && g_data.p_flag == TRUE)
-	 	exit(g_data.exit_status);
+	if (g_data.cnt.pipe_cnt > 0 && g_data.p_flag == TRUE)
+		exit(g_data.exit_status);
 }
 
 void	execve_cmd(t_astnode *argsnode)
@@ -103,10 +104,7 @@ void	cmd_without_pipe(char *cmd, int idx, char **argv, char *execve_cmd)
 		if (ft_strnstr(cmd, "minishell", ft_strlen(cmd)))
 			ft_nanoshell(cmd);
 		else
-		{
 			fork_before_run_execve(idx, argv, execve_cmd);
-			printf("errno : %d\n", errno);
-		}
 	}
 	else
 	{
@@ -122,10 +120,11 @@ void	cmd_without_pipe(char *cmd, int idx, char **argv, char *execve_cmd)
 
 void	fork_before_run_execve(int idx, char **argv, char *execve_cmd)
 {
+	pid_t	pid2;
+
+	pid2 = -1;
 	if (g_data.cnt.pipe_cnt == 0)
 	{
-		pid_t	pid2;
-
 		pid2 = fork();
 		if (pid2 < 0)
 			ft_error("[FORK ERROR] fork_before_run_execve failed\n");
@@ -133,7 +132,6 @@ void	fork_before_run_execve(int idx, char **argv, char *execve_cmd)
 			fork_before_run_execve_child(idx, execve_cmd, argv);
 		else
 		{
-			// printf("exit status %d\n", g_data.exit_status);
 			waitpid(pid2, &(g_data.exit_status), 0);
 			if (WIFEXITED(g_data.exit_status))
 				g_data.exit_status = WEXITSTATUS(g_data.exit_status);

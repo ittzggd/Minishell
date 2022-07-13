@@ -6,7 +6,7 @@
 #    By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 14:13:39 by yukim             #+#    #+#              #
-#    Updated: 2022/07/12 20:07:44 by hejang           ###   ########.fr        #
+#    Updated: 2022/07/13 14:14:38 by hejang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ NAME = minishell
 # 폴더에 필요없는 파일들 삭제, 주석 삭제, 헤더파일 주석 확인
 
 # CC 플래그 확인!!!!!!!!! 
-CC = gcc -g3 -fsanitize=address
+CC = gcc -g3 #-fsanitize=address
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror 
-COMFILE_FLAGS = -lreadline -L/opt/homebrew/opt/readline/lib
-OBJ_FLAGS = -I/opt/homebrew/opt/readline/include
-#COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
-#OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
+#COMFILE_FLAGS = -lreadline -L/opt/homebrew/opt/readline/lib
+#OBJ_FLAGS = -I/opt/homebrew/opt/readline/include
+COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
+OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
 
 AST_SRCS = ast/delete_astnode.c  ast/free_data_ast.c ast/init_ast.c \
 			ast/postorder_travel_ast.c ast/postorder_travel_command.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:44:47 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:29:48 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:08:12 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ static int	get_type(char *value);
 static void	type_word_to_cmd(int *i, int *cmd_flag);
 static void	word_to_option(int *i);
 
-void	lexical_analysis(void)
+void	lexical_analysis(int *tokenize_cnt)
 {
-	g_data.lexer.ptype = (int *)ft_calloc(g_data.cnt.tokens_cnt + 1, sizeof(int));
+	int	size;
+
+	size = *tokenize_cnt + 1;
+	g_data.lexer.ptype = (int *)ft_calloc(size, sizeof(int));
 	if (!g_data.lexer.ptype)
 		ft_error("lexical_analysis : allocation failed\n");
 	set_lexer_ptype();
@@ -44,7 +47,6 @@ static void	set_lexer_ptype(void)
 		}
 		else if (g_data.lexer.ptype[i] == T_REDIRECTION)
 		{
-			g_data.cnt.redirection_cnt++;
 			if (ft_strncmp("<<", g_data.lexer.pptokens[i], -1))
 				g_data.hd.heredoc_cnt++;
 		}

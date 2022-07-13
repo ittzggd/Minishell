@@ -3,28 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   syntax.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:07:44 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:29:44 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:04:30 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/minishell.h"
 
-int	syntax_analysis(void)
+int	syntax_analysis(int *tokens_cnt)
 {
 	int		curr;
 	int		ret_status;
 
 	curr = 0;
 	ret_status = 0;
-	while (curr < g_data.cnt.tokens_cnt)
+	while (curr < *tokens_cnt)
 	{
 		if (g_data.lexer.ptype[curr] == T_COMMAND)
 			syntax_check_command(&curr);
-		// else if (g_data.lexer.ptype[curr] == T_OPTION)
-		// 	syntax_check_option(&curr, &ret_status);
 		else if (g_data.lexer.ptype[curr] == T_REDIRECTION)
 			syntax_check_redirection(&curr, &ret_status);
 		else if (curr == 0)

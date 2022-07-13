@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:44:36 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:37 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:52:09 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	preprocess_heredoc(void)
 		heredoc_do_child();
 	else
 		heredoc_do_parent(pid);
-	
 	g_data.hd.heredoc_flag = FALSE;
 }
 
@@ -45,10 +44,12 @@ static void	create_delimiter_list(void)
 	int		hd_idx;
 	int		t_idx;
 	char	**tokens;
+	char	**delimiter;
 
 	hd_idx = 0;
 	t_idx = 0;
 	tokens = g_data.lexer.pptokens;
+	delimiter = g_data.hd.heredoc_delimiter;
 	while (hd_idx < g_data.hd.heredoc_cnt)
 	{
 		if (g_data.lexer.ptype[t_idx] == T_REDIRECTION)
@@ -57,7 +58,7 @@ static void	create_delimiter_list(void)
 			{
 				if (pipe(g_data.hd.heredoc_fd[hd_idx].fd) < 0)
 					ft_error("[Pipe ERROR] Heredoc failed\n");
-				g_data.hd.heredoc_delimiter[hd_idx] = ft_strdup(tokens[t_idx + 1]);
+				delimiter[hd_idx] = ft_strdup(tokens[t_idx + 1]);
 				hd_idx++;
 			}
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   token.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 23:22:36 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:29:44 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:16:35 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,32 @@
 int	analyze_input(char *input)
 {
 	char	*replaced_str;
+	int		tokens_cnt;
 
 	replaced_str = replace_env_to_value(input);
-	if (tokenize_input(replaced_str) == ERROR)
+	if (tokenize_input(replaced_str, &tokens_cnt) == ERROR)
 		return (ERROR);
-	lexical_analysis();
-	if (syntax_analysis() != 0)
+	lexical_analysis(&tokens_cnt);
+	if (syntax_analysis(&tokens_cnt) != 0)
 		return (ERROR);
 	replace_quote_env();
+	free(replaced_str);
 	return (TRUE);
 }
 
-int	tokenize_input(char *input)
+int	tokenize_input(char *input, int *tokens_cnt)
 {
 	int		split_index;
+	int		size;
 
-	g_data.cnt.tokens_cnt = ft_wordcount(input);
-	if (g_data.cnt.tokens_cnt == ERROR)
+	*tokens_cnt = ft_wordcount(input);
+	if (*tokens_cnt == ERROR)
 	{
 		g_data.exit_status = 258;
 		return (ERROR);
 	}
-	g_data.lexer.pptokens = ft_calloc(g_data.cnt.tokens_cnt + 1, sizeof(char *));
+	size = *tokens_cnt + 1;
+	g_data.lexer.pptokens = ft_calloc(size, sizeof(char *));
 	if (!g_data.lexer.pptokens)
 		ft_error("tokenize_input : allocation failed\n");
 	split_index = ft_split_str((char *)input, g_data.lexer.pptokens);

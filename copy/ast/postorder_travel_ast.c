@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   postorder_travel_ast.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 15:51:54 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:15 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:42:29 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	postorder_travel_ast(t_astnode *ast_node)
 	i = 0;
 	while (i < g_data.cnt.pipe_cnt + 1)
 	{
-	 	waitpid(pid[i], &g_data.exit_status, 0);
-	 	write(g_data.std_fd[1], "child parent pid\n", 17);
-	 	i++;
+		waitpid(pid[i], &g_data.exit_status, 0);
+		write(g_data.std_fd[1], "child parent pid\n", 17);
+		i++;
 	}
 	if (WIFEXITED(g_data.exit_status))
 		g_data.exit_status = WEXITSTATUS(g_data.exit_status);

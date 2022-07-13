@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:31:33 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:29:45 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:26:12 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ void	free_data_heredoc_fd(void)
 
 void	reset_data(void)
 {
-	g_data.cnt.tokens_cnt = 0;
-	g_data.cnt.redirection_cnt = 0;
 	g_data.cnt.pipe_cnt = 0;
 	g_data.p_flag = 0;
 	free_data_heredoc_fd();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell_define.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:03:00 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:32:18 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 14:25:34 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,7 @@ typedef struct s_heredoc
 
 typedef struct s_cnt
 {
-	int		tokens_cnt;
-	int		redirection_cnt;
 	int		pipe_cnt;
-	int		envv_cnt;
 }		t_cnt;
 
 typedef struct s_termios
@@ -91,11 +88,6 @@ typedef struct s_envv_node
 	int					init_flag;
 	struct s_envv_node	*p_link;
 }			t_envv_node;
-
-typedef struct s_cmd
-{
-	char	*cmd[9];
-}			t_cmd;
 
 enum e_ast_node_type
 {

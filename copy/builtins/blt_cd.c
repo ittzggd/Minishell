@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   blt_cd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:26:13 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 22:15:42 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 13:47:52 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	chdir_error(char *tmp);
 static void	update_pwd(void);
 static int	cd_home(char **home_path, char **dst_path, char **tmp);
+static void	run_cd__ft_cd(char *tmp, char *dst_path);
 
 int	ft_cd(t_astnode *args_node)
 {
@@ -25,10 +26,10 @@ int	ft_cd(t_astnode *args_node)
 
 	g_data.exit_status = 0;
 	idx = args_node->prightchild->pvalue_index[1];
-	if(idx == END)
+	if (idx == END)
 		tmp = ft_strdup("~");
 	else
-		tmp = ft_strdup(g_data.lexer.pptokens[args_node->prightchild->pvalue_index[1]]);
+		tmp = ft_strdup(g_data.lexer.pptokens[idx]);
 	if (idx == END || ft_strncmp(tmp, "~", -1))
 	{
 		if (cd_home(&home_path, &dst_path, &tmp) == ERROR)
@@ -38,13 +39,7 @@ int	ft_cd(t_astnode *args_node)
 		dst_path = get_envv("OLDPWD");
 	else
 		dst_path = tmp;
-	if (chdir(dst_path) == ERROR)
-		chdir_error(tmp);
-	else
-		update_pwd();
-	if(tmp != dst_path)
-		free(dst_path);
-	free(tmp);
+	run_cd__ft_cd(tmp, dst_path);
 	return (g_data.exit_status);
 }
 
@@ -84,4 +79,15 @@ static void	update_pwd(void)
 		g_data.current_path = getcwd(NULL, 0);
 	if (tmp != g_data.current_path)
 		free(tmp);
+}
+
+static void	run_cd__ft_cd(char *tmp, char *dst_path)
+{
+	if (chdir(dst_path) == ERROR)
+		chdir_error(tmp);
+	else
+		update_pwd();
+	if (tmp != dst_path)
+		free(dst_path);
+	free(tmp);
 }

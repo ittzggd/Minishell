@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:44:50 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/12 19:36:03 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 14:07:12 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ void		init_setting(char **envp);
 int			analyze_input(char *input);
 
 // tokens
-int			tokenize_input(char *input);
+int			tokenize_input(char *input, int *tokenize_cnt);
 char		**ft_minishell_split(const char *str);
 int			ft_wordcount(char const *str);
 int			get_wc(char const *str, int *i, int *wc_flag, int *wc);
 void		replace_quote_env(void);
 
 //lexer
-void		lexical_analysis(void);
+void		lexical_analysis(int *tokenize_cnt);
 char		*get_envv(char *key);
 t_envv_node	*get_el_node(t_envv_node *envv_list, char *key);
 void		insert_envv(char *key, char *value, int init_flag);
 int			init_envp(char *input, char **key, char **value);
 
-int			syntax_analysis(void);
+int			syntax_analysis(int *tokenize_cnt);
 void		syntax_error(int *ret_status);
 void		syntax_check_command(int *curr);
 void		syntax_check_redirection(int *curr, int *ret_status);
