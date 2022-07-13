@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   not_replace_heredoc.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 19:18:03 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 19:45:58 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 19:56:34 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_heredoc(char *str)
 {
 	if (!str || is_redirection((const char *)str) == ERROR)
 		return (FALSE);
-	return (ft_strncmp("<<", str, 2)); 
+	return (ft_strncmp("<<", str, 2));
 }
 
 void	get_len_case_heredoc_del(int *i, int *ret_len, char *input)
@@ -68,4 +68,3 @@ void	replace_case_heredoc_del(char *input, int *i, int *j, char *ret)
 		copy_char(input, i, j, ret);
 	}
 }
-

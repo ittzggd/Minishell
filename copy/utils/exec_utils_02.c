@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils_02.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:46:06 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 15:56:23 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:22:21 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	check_path_env(char	*execve_cmd)
 	struct stat	buf;
 
 	path_node = get_el_node(g_data.envv_list, "PATH");
-	if (!path_node)
+	if (!path_node || ft_strchr(execve_cmd, '/'))
 	{
 		lstat(execve_cmd, &buf);
 		if (errno == ENOENT)

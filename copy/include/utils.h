@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:01:08 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 19:51:38 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 19:56:07 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void		replace_env_case_exit_status(int *i, int *j, char *ret);
 int			is_heredoc(char *str);
 void		get_len_case_heredoc_del(int *i, int *ret_len, char *input);
 void		replace_case_heredoc_del(char *input, int *i, int *j, char *ret);
-
 
 // remove_quote
 void		rm_argument_quote(int i);
