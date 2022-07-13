@@ -6,7 +6,7 @@
 /*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:40:32 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 15:50:00 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 18:58:49 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	get_replaced_str(int i, int j, char **ret, char *input);
 static void	case_double_quote(char *input, int *i, int *j, char *ret);
 static void	case_not_quote(char *input, int *i, int *j, char *ret);
+static void	case_quote(char *input, int *i, int *j, char *ret);
 
 char	*replace_env_to_value(char *input)
 {
@@ -45,18 +46,26 @@ static void	get_replaced_str(int i, int j, char **ret, char *input)
 			case_not_quote(input, &i, &j, *ret);
 			continue ;
 		}
-		copy_char(input, &i, &j, *ret);
-		while (input[i] && quote != is_quote(input[i]))
-		{
-			if (quote == DOUBLE_QUOTE)
-				case_double_quote(input, &i, &j, *ret);
-			else if (quote == SINGLE_QUOTE)
-				copy_char(input, &i, &j, *ret);
-		}
-		if (input[i])
-			copy_char(input, &i, &j, *ret);
+		case_quote(input, &i, &j, *ret);
 	}
 	(*ret)[j] = '\0';
+}
+
+static void	case_quote(char *input, int *i, int *j, char *ret)
+{
+	int	quote;
+
+	quote = is_quote(input[*i]);
+	copy_char(input, i, j, ret);
+	while (input[*i] && quote != is_quote(input[*i]))
+	{
+		if (quote == DOUBLE_QUOTE)
+			case_double_quote(input, i, j, ret);
+		else if (quote == SINGLE_QUOTE)
+			copy_char(input, i, j, ret);
+	}
+	if (input[*i])
+		copy_char(input, i, j, ret);
 }
 
 static void	case_double_quote(char *input, int *i, int *j, char *ret)

@@ -6,7 +6,7 @@
 /*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:52:01 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 15:50:02 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 18:58:59 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@ int	get_len_replaced_str(char *input)
 			continue ;
 		}
 		case_quote(quote, &i, &ret_len, input);
-		if (input[i])
-		{
-			i++;
-			ret_len++;
-		}
 	}
 	return (ret_len);
 }
@@ -51,6 +46,11 @@ static void	case_quote(int quote, int *i, int *ret_len, char *input)
 		case_double_quote(quote, i, ret_len, input);
 	else if (input[*i] && quote == SINGLE_QUOTE)
 		case_single_quote(quote, i, ret_len, input);
+	if (input[*i])
+	{
+		(*i)++;
+		(*ret_len)++;
+	}
 }
 
 static void	case_double_quote(int quote, int *i, int *ret_len, char *input)

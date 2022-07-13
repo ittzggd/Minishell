@@ -36,6 +36,7 @@ gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/de
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/remove_ll_element.c -o utils/remove_ll_element.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_bzero.c -o utils/ft_bzero.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_calloc.c -o utils/ft_calloc.o
+ 
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_error.c -o utils/ft_error.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_lstadd_back.c -o utils/ft_lstadd_back.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_lstnew.c -o utils/ft_lstnew.o
@@ -43,6 +44,7 @@ gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_itoa.c -o utils/ft_itoa.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_minishell_atoi.c -o utils/ft_minishell_atoi.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_minishell_split.c -o utils/ft_minishell_split.o
+ 
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_split_str_util.c -o utils/ft_split_str_util.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strchr.c -o utils/ft_strchr.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strdup.c -o utils/ft_strdup.o
@@ -51,6 +53,7 @@ gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strlcpy.c -o utils/ft_strlcpy.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strlen.c -o utils/ft_strlen.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strncmp.c -o utils/ft_strncmp.o
+ 
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_strnstr.c -o utils/ft_strnstr.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ft_split.c -o utils/ft_split.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/syntax_utils.c -o utils/syntax_utils.o
@@ -68,7 +71,6 @@ gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/ex
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/is_utils_01.c -o utils/is_utils_01.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/is_utils_02.c -o utils/is_utils_02.o
 gcc -Wall -Wextra -Werror  -I/Users/yukim/.brew/opt/readline/include -c utils/envvlist_to_char.c -o utils/envvlist_to_char.o
- 
 gcc -Wall -Wextra -Werror  -lreadline -L/Users/yukim/.brew/opt/readline/lib main.o init.o signal.o reset.o redirections.o heredoc.o token.o lexer.o syntax.o exec.o data.o env.o path.o quote_env.o ast/delete_astnode.o ast/free_data_ast.o ast/init_ast.o ast/postorder_travel_ast.o ast/postorder_travel_command.o ast/tree_args.o ast/tree_cmd.o ast/tree_reds.o ast/tree_utils.o builtins/blt_cd.o builtins/blt_echo.o builtins/blt_env.o builtins/blt_exit.o builtins/blt_export.o builtins/blt_nanoshell.o builtins/blt_pwd.o builtins/blt_unset.o builtins/blt_utils.o utils/delete_linked_list.o utils/remove_ll_element.o utils/ft_bzero.o utils/ft_calloc.o utils/ft_error.o utils/ft_lstadd_back.o utils/ft_lstnew.o utils/ft_memset.o utils/ft_itoa.o utils/ft_minishell_atoi.o utils/ft_minishell_split.o utils/ft_split_str_util.o utils/ft_strchr.o utils/ft_strdup.o utils/ft_strjoin.o utils/ft_strlcat.o utils/ft_strlcpy.o utils/ft_strlen.o utils/ft_strncmp.o utils/ft_strnstr.o utils/ft_split.o utils/syntax_utils.o utils/ft_key_len.o utils/remove_quote.o utils/replace_env_utils.o utils/get_len_replaced_str.o utils/replace_env_to_value.o utils/ft_wordcount.o utils/ft_wordcount_utils.o utils/heredoc_utils.o utils/heredoc_utils_02.o utils/exec_utils.o utils/exec_utils_02.o utils/is_utils_01.o utils/is_utils_02.o utils/envvlist_to_char.o -o minishell 
 make: Leaving directory `/Users/yukim/Desktop/220713lastlast/copy'
  
