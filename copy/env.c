@@ -6,13 +6,13 @@
 /*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 09:59:43 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 17:31:03 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 17:39:46 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/minishell.h"
 
-static void	free_arg(char *key, char *value);
+static void	case_is_exist(char *key, char *value, t_envv_node *node);
 
 void	insert_envv(char *key, char *value, int init_flag)
 {
@@ -29,11 +29,7 @@ void	insert_envv(char *key, char *value, int init_flag)
 			free(key);
 			return ;
 		}
-		tmp = is_exist->value;
-		is_exist->value = ft_strdup(value);
-		free_arg(key, value);
-		free(tmp);
-		is_exist->init_flag = TRUE;
+		case_is_exist(key, value, is_exist);
 	}
 	else
 	{
@@ -42,8 +38,21 @@ void	insert_envv(char *key, char *value, int init_flag)
 		element.init_flag = init_flag;
 		new = ft_lstnew(element);
 		ft_lstadd_back(new);
-		free_arg(key, value);
+		free(key);
+		free(value);
 	}
+}
+
+static void	case_is_exist(char *key, char *value, t_envv_node *node)
+{
+	char		*tmp;
+
+	tmp = node->value;
+	node->value = ft_strdup(value);
+	free(key);
+	free(value);
+	free(tmp);
+	node->init_flag = TRUE;
 }
 
 char	*get_envv(char *key)
@@ -97,10 +106,4 @@ int	init_envp(char *input, char **key, char **value)
 		*value = NULL;
 	}
 	return (init_flag);
-}
-
-static void	free_arg(char *key, char *value)
-{
-	free(key);
-	free(value);
 }
