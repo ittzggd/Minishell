@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 06:39:26 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 15:03:07 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:33:03 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ static	int	get_len_with_envvalue_in_heredoc(char *origin);
 void	exec_heredoc(int i, int *idx)
 {
 	char	*delimiter;
-	int		delimiter_quote_flag;
+	int		del_quote_flag;
 	int		j;
 
 	j = 0;
-	delimiter_quote_flag = 0;
+	del_quote_flag = 0;
 	if (ft_strncmp("<<", g_data.lexer.pptokens[i], -1))
 	{
 		while (g_data.lexer.pptokens[i + 1][j])
 		{
 			if (is_quote(g_data.lexer.pptokens[i + 1][j]) != FALSE)
-				delimiter_quote_flag = TRUE;
+				del_quote_flag = TRUE;
 			j++;
 		}
-		if (delimiter_quote_flag)
+		if (del_quote_flag)
 			rm_argument_quote(i + 1);
 		delimiter = g_data.lexer.pptokens[i + 1];
-		rl_heredoc(delimiter, &g_data.hd.heredoc_fd[*idx], delimiter_quote_flag);
+		rl_heredoc(delimiter, &g_data.hd.heredoc_fd[*idx], del_quote_flag);
 		(*idx)++;
 	}
 }

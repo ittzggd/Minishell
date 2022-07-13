@@ -6,20 +6,15 @@
 #    By: hejang <hejang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 14:13:39 by yukim             #+#    #+#              #
-#    Updated: 2022/07/13 14:24:48 by hejang           ###   ########.fr        #
+#    Updated: 2022/07/13 15:34:34 by hejang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
 
-# 폴더에 필요없는 파일들 삭제, 주석 삭제, 헤더파일 주석 확인
-
-# CC 플래그 확인!!!!!!!!! 
-CC = gcc -g3 #-fsanitize=address
+CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror 
-#COMFILE_FLAGS = -lreadline -L/opt/homebrew/opt/readline/lib
-#OBJ_FLAGS = -I/opt/homebrew/opt/readline/include
 COMFILE_FLAGS = -lreadline -L${HOME}/.brew/opt/readline/lib
 OBJ_FLAGS = -I${HOME}/.brew/opt/readline/include
 

@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:07:14 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 14:08:31 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:34:04 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	exec_ast(void)
 	pid_t	pid2;
 
 	pid2 = -1;
-	if (g_data.cnt.pipe_cnt > 0)
+	if (g_data.pipe_cnt > 0)
 	{
 		pid2 = fork();
 		if (pid2 < 0)
@@ -62,7 +62,7 @@ void	exec_cmd(t_astnode *argsnode)
 		ft_unset(argsnode);
 	else
 		execve_cmd(argsnode);
-	if (g_data.cnt.pipe_cnt > 0 && g_data.p_flag == TRUE)
+	if (g_data.pipe_cnt > 0 && g_data.p_flag == TRUE)
 		exit(g_data.exit_status);
 }
 
@@ -78,7 +78,7 @@ void	execve_cmd(t_astnode *argsnode)
 	while (argsnode->prightchild->pvalue_index[cnt] != END)
 		cnt++;
 	argv = create_argv(cnt, argsnode);
-	if (g_data.cnt.pipe_cnt == 0)
+	if (g_data.pipe_cnt == 0)
 		cmd_without_pipe(execve_cmd, 0, argv, execve_cmd);
 	else
 	{
@@ -123,7 +123,7 @@ void	fork_before_run_execve(int idx, char **argv, char *execve_cmd)
 	pid_t	pid2;
 
 	pid2 = -1;
-	if (g_data.cnt.pipe_cnt == 0)
+	if (g_data.pipe_cnt == 0)
 	{
 		pid2 = fork();
 		if (pid2 < 0)

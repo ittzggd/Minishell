@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:44:47 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 14:08:12 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:34:04 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	set_lexer_ptype(void)
 			type_word_to_cmd(&i, &command_flag);
 		if (g_data.lexer.ptype[i] == T_PIPE)
 		{
-			g_data.cnt.pipe_cnt++;
+			g_data.pipe_cnt++;
 			command_flag = FALSE;
 		}
 		else if (g_data.lexer.ptype[i] == T_REDIRECTION)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   postorder_travel_ast.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 15:51:54 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:42:29 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:34:04 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	postorder_travel_ast(t_astnode *ast_node)
 	int		i;
 
 	g_data.p_flag = TRUE;
-	pid = ft_calloc(g_data.cnt.pipe_cnt + 1, sizeof(int));
+	pid = ft_calloc(g_data.pipe_cnt + 1, sizeof(int));
 	if (!pid)
 		ft_error("postorder_travel_ast : allocation failed\n");
 	while_pipe_or_command(ast_node, pid);
 	i = 0;
-	while (i < g_data.cnt.pipe_cnt + 1)
+	while (i < g_data.pipe_cnt + 1)
 	{
 		waitpid(pid[i], &g_data.exit_status, 0);
 		write(g_data.std_fd[1], "child parent pid\n", 17);
@@ -51,7 +51,7 @@ static void	while_pipe_or_command(t_astnode *ast_node, pid_t *pid)
 	prev_fd = NOT_USED;
 	while (ast_node->nodetype == A_PIPE || ast_node->nodetype == A_COMMAND)
 	{
-		if (i < g_data.cnt.pipe_cnt)
+		if (i < g_data.pipe_cnt)
 		{
 			if (pipe(pipe_line) < 0)
 				ft_error("[Pipe ERROR] ast failed\n");
@@ -77,7 +77,7 @@ static void	c_in_while(int i, int *prev_fd, int *pipe_line, t_astnode *astnode)
 		close(*prev_fd);
 	}
 	close(pipe_line[0]);
-	if (i < g_data.cnt.pipe_cnt)
+	if (i < g_data.pipe_cnt)
 		dup2(pipe_line[1], STDOUT_FILENO);
 	close(pipe_line[1]);
 	if (astnode->nodetype == A_PIPE)
@@ -91,7 +91,7 @@ static void	parent_in_while_pipe_or_cmd(int i, int *prev_fd, int *pipe_line)
 {
 	if (*prev_fd != NOT_USED)
 		close(*prev_fd);
-	if (i == g_data.cnt.pipe_cnt)
+	if (i == g_data.pipe_cnt)
 		close(pipe_line[0]);
 	else
 		*prev_fd = pipe_line[0];

@@ -6,7 +6,7 @@
 /*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:03:00 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 14:25:34 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:33:43 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,6 @@ typedef struct s_heredoc
 	int				heredoc_flag;
 }			t_heredoc;
 
-typedef struct s_cnt
-{
-	int		pipe_cnt;
-}		t_cnt;
-
 typedef struct s_termios
 {
 	struct termios	origin_term;
@@ -71,7 +66,7 @@ typedef struct s_data
 {
 	int					std_fd[2];
 	struct s_heredoc	hd;
-	struct s_cnt		cnt;
+	int					pipe_cnt;
 	struct s_termios	term;
 	struct s_envv_node	*envv_list;
 	int					exit_status;
