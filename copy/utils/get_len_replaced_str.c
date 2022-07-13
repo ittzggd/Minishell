@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_len_replaced_str.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:52:01 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 18:58:59 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 19:26:37 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	get_len_replaced_str(char *input)
 		quote = is_quote(input[i]);
 		if (input[i] && quote == FALSE)
 		{
+			if (is_heredoc(&input[i]) == TRUE)
+			{
+				get_len_case_heredoc_del(&i, &ret_len, input);
+				continue ;
+			}
 			case_not_quote(&i, &ret_len, input);
 			continue ;
 		}

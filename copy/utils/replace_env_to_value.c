@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   replace_env_to_value.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 14:40:32 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 18:58:49 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 19:45:38 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ static void	get_replaced_str(int i, int j, char **ret, char *input)
 		quote = is_quote(input[i]);
 		if (input[i] && quote == FALSE)
 		{
+			if (is_heredoc(&input[i]) == TRUE)
+			{
+				replace_case_heredoc_del(input, &i, &j, *ret);
+				continue ;
+			}
 			case_not_quote(input, &i, &j, *ret);
 			continue ;
 		}

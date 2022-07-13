@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hejang <hejang@student.42.fr>              +#+  +:+       +#+         #
+#    By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 14:13:39 by yukim             #+#    #+#              #
-#    Updated: 2022/07/13 15:34:34 by hejang           ###   ########.fr        #
+#    Updated: 2022/07/13 19:46:09 by hejang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ UTILS_SRCS = utils/delete_linked_list.c utils/remove_ll_element.c \
 			utils/heredoc_utils.c utils/heredoc_utils_02.c \
 			utils/exec_utils.c utils/exec_utils_02.c \
 			utils/is_utils_01.c utils/is_utils_02.c \
-			utils/envvlist_to_char.c
+			utils/envvlist_to_char.c utils/not_replace_heredoc.c
 
 MAIN_SRCS = main.c \
 			init.c signal.c reset.c\
