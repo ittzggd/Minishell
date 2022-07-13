@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:43:08 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:28:27 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:38:02 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static int	input_str_is_not_null(char *input_str)
 	if (analyze_input(input_str) == ERROR)
 	{
 		reset_data();
+		free(input_str);
 		return (CONTINUE);
 	}
 	init_ast();

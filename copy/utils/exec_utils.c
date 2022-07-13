@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 03:53:00 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:58:20 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:39:08 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**create_argv(int cnt, t_astnode *argsnode)
 void	command_not_found_error(char *cmd)
 {
 	add_history(cmd);
-	ft_error_message("minishell : command not found : ", 127);
+	ft_error_message("nanoshell : command not found : ", 127);
 	ft_error_message(cmd, 127);
 	ft_error_message("\n", 127);
 	exit(g_data.exit_status);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   blt_cd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:26:13 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 13:47:52 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:38:56 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	cd_home(char **home_path, char **dst_path, char **tmp)
 
 static void	chdir_error(char *tmp)
 {
-	ft_error_message("minishell : cd : ", 1);
+	ft_error_message("nanoshell : cd : ", 1);
 	ft_error_message(tmp, 1);
 	ft_error_message(": No such file or directory\n", 1);
 }
