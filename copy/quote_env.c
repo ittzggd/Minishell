@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quote_env.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 19:19:44 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:51 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/13 15:07:07 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	replace_quote_env(void)
 			if (ft_strncmp("<<", g_data.lexer.pptokens[i - 1], -1) == FALSE)
 				rm_argument_quote(i);
 		}
-		if (g_data.lexer.ptype[i] == T_COMMAND \
+		else if (g_data.lexer.ptype[i] == T_COMMAND \
 				|| g_data.lexer.ptype[i] == T_WORD)
 			rm_argument_quote(i);
 		i++;
