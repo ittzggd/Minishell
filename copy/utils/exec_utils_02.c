@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils_02.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:46:06 by hejang            #+#    #+#             */
-/*   Updated: 2022/07/13 13:58:00 by yukim            ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:56:23 by hejang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ static void	loop_in_fork(int idx, char *ecve_cmd, char **argv, char **filepath);
 void	fork_before_run_execve_child(int idx, char *ecve_cmd, char **argv)
 {
 	char	**filepath;
-	int		flag;
 
-	flag = FALSE;
 	reset_signal();
 	if (check_path_env(ecve_cmd) == ERROR)
 		exit(g_data.exit_status);
-	if (check_path_env(ecve_cmd) != TRUE)
-		flag = TRUE;
+	if (check_path_env(ecve_cmd) == TRUE && (*ecve_cmd) == '\0')
+		command_not_found_error(ecve_cmd);
 	if (ft_strchr(ecve_cmd, '/'))
 	{
 		filepath = ft_calloc(2, sizeof(char *));
