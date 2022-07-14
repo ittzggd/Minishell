@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   blt_cd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hejang <hejang@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yukim <yukim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:26:13 by yukim             #+#    #+#             */
-/*   Updated: 2022/07/13 15:38:56 by hejang           ###   ########.fr       */
+/*   Updated: 2022/07/14 15:25:31 by yukim            ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_cd(t_astnode *args_node)
 		tmp = ft_strdup("~");
 	else
 		tmp = ft_strdup(g_data.lexer.pptokens[idx]);
-	if (idx == END || ft_strncmp(tmp, "~", -1))
+	if (idx == END || ft_strncmp(tmp, "~", 1))
 	{
 		if (cd_home(&home_path, &dst_path, &tmp) == ERROR)
 			return (g_data.exit_status);
